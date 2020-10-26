@@ -7,6 +7,11 @@ function changePicture(event) {
 }
 
 function submitValues(event) {
+  data.profile.avatarUrl = form.elements.avatarUrl.value;
+  data.profile.username = form.elements.username.value;
+  data.profile.fullName = form.elements.fullName.value;
+  data.profile.location = form.elements.location.value;
+  data.profile.bio = form.elements.bio.value;
   event.preventDefault();
 }
 
