@@ -12,6 +12,11 @@ function submitValues(event) {
   data.profile.fullName = form.elements.fullName.value;
   data.profile.location = form.elements.location.value;
   data.profile.bio = form.elements.bio.value;
+  form.elements.avatarUrl.value = '';
+  form.elements.username.value = '';
+  form.elements.fullName.value = '';
+  form.elements.location.value = '';
+  form.elements.bio.value = '';
   event.preventDefault();
 }
 
