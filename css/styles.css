@@ -1,10 +1,11 @@
 html {
   font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
 }
 
 h1 {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 header {
@@ -13,4 +14,44 @@ header {
   color: white;
   padding: 0.5rem 0;
   text-align: center;
+}
+
+textarea {
+  resize: none;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  font-size: 1rem;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.padding-bottom {
+  padding-bottom: 0.75rem;
+}
+
+.input-box {
+  padding: 0.75rem 0;
+  border: 2px solid black;
+  margin-top: 0.5rem;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.save-button {
+  margin: 1rem 0 2rem 0;
+}
+
+.flex-end {
+  justify-content: flex-end;
 }

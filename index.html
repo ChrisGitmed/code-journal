@@ -20,8 +20,43 @@
     <h1>Code Journal</h1>
   </header>
 
-  <main>
-    <div data-view="edit-profile"></div>
+  <main class="container">
+    <div data-view="edit-profile">
+      <form action="">
+        <h2 class="column-full">Edit Profile</h2>
+        <div class="row">
+          <img class="column-half contain padding-bottom" src="images/placeholder-image-square.jpg" alt="Placeholder image">
+          <div class="column-half flex-column">
+            <div class="padding-bottom">
+              <label for="avatar-URL">Avatar URL</label>
+              <input required type="text" name="avatar-URL" class="input-box">
+            </div>
+            <div class="padding-bottom">
+              <label for="username">Username</label>
+              <input required type="text" name="username" class="input-box">
+            </div>
+            <div class="padding-bottom">
+              <label for="full-name">Full Name</label>
+              <input required type="text" name="full-name" class="input-box">
+            </div>
+            <div class="padding-bottom">
+              <label for="location">Location</label>
+              <input required type="text" name="location" class="input-box">
+            </div>
+          </div>
+        </div>
+
+        <div class="row column-full">
+          <label for="bio">Bio:</label>
+          <textarea required name="bio" rows="10" class="input-box"></textarea>
+        </div>
+
+        <div class="row column-full flex-end">
+          <input type="submit" value="Save" class="save-button">
+        </div>
+      </form>
+
+    </div>
   </main>
 
   <script src="js/data.js"></script>
