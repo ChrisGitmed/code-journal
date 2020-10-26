@@ -17,6 +17,7 @@ function submitValues(event) {
   form.elements.fullName.value = '';
   form.elements.location.value = '';
   form.elements.bio.value = '';
+  avatarImage.src = 'images/placeholder-image-square.jpg';
   event.preventDefault();
 }
 
