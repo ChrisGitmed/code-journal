@@ -7,7 +7,7 @@ function changePicture(event) {
 }
 
 function submitValues(event) {
-
+  event.preventDefault();
 }
 
 avatarUrlInput.addEventListener('input', changePicture);
