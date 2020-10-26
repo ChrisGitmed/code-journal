@@ -21,5 +21,11 @@ function submitValues(event) {
   event.preventDefault();
 }
 
+function setItemsInStorage(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('code-journal', dataJSON);
+}
+
 avatarUrlInput.addEventListener('input', changePicture);
 form.addEventListener('submit', submitValues);
+window.addEventListener('beforeunload', setItemsInStorage);
