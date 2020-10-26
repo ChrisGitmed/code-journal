@@ -4,8 +4,13 @@ html {
 
 h1 {
   font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5rem;
 }
 
 header {
+  width: 100%;
   background-color: darkslategray;
+  color: white;
+  padding: 0.5rem 0;
+  text-align: center;
 }
