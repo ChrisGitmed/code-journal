@@ -2,6 +2,7 @@ var $avatarUrlInput = document.querySelector('#avatar-URL');
 var $avatarImage = document.querySelector('img');
 var $form = document.querySelector('form');
 var $viewList = document.querySelectorAll('main > div');
+var $profileDiv = document.querySelector('div[data-view="profile"]');
 
 function changePicture(event) {
   $avatarImage.src = event.target.value;
@@ -25,7 +26,6 @@ function setItemsInStorage(event) {
 
 function getProfileDataInDOM(data) {
   var $newProfile = document.createElement('div');
-  $newProfile.setAttribute('data-view', data.view);
 
   var $newHeader = document.createElement('h1');
   $newHeader.setAttribute('class', 'column-full');
@@ -61,7 +61,6 @@ function getProfileDataInDOM(data) {
   $newColumn.appendChild($bioText);
   return $newProfile;
 }
-getProfileDataInDOM(data);
 
 function viewSwapper(dataView) {
   for (var i = 0; i < $viewList.length; i++) {
@@ -72,6 +71,10 @@ function viewSwapper(dataView) {
     }
   }
   data.view = dataView;
+  if (data.view === 'profile') {
+    $profileDiv.innerHTML = '';
+    $profileDiv.appendChild(getProfileDataInDOM(data));
+  }
 }
 viewSwapper('profile');
 
