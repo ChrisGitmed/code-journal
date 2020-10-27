@@ -7,18 +7,14 @@ function changePicture(event) {
 }
 
 function submitValues(event) {
+  event.preventDefault();
   data.profile.avatarUrl = form.elements.avatarUrl.value;
   data.profile.username = form.elements.username.value;
   data.profile.fullName = form.elements.fullName.value;
   data.profile.location = form.elements.location.value;
   data.profile.bio = form.elements.bio.value;
-  form.elements.avatarUrl.value = '';
-  form.elements.username.value = '';
-  form.elements.fullName.value = '';
-  form.elements.location.value = '';
-  form.elements.bio.value = '';
+  form.reset();
   avatarImage.src = 'images/placeholder-image-square.jpg';
-  event.preventDefault();
 }
 
 function setItemsInStorage(event) {
