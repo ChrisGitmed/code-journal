@@ -17,6 +17,7 @@ function submitValues(event) {
   data.profile.bio = $form.elements.bio.value;
   $form.reset();
   $avatarImage.src = 'images/placeholder-image-square.jpg';
+  viewSwapper('profile');
 }
 
 function setItemsInStorage(event) {
