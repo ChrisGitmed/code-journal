@@ -33,7 +33,6 @@ input {
 .flex-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .padding-bottom {
@@ -54,4 +53,8 @@ input {
 
 .flex-end {
   justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
 }
