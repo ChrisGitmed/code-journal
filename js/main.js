@@ -79,6 +79,15 @@ function viewSwapper(dataView) {
 }
 
 function checkLoaded(event) {
+  var previousProfile = localStorage.getItem('code-journal');
+  if (previousProfile !== null) {
+    data = JSON.parse(previousProfile);
+  }
+  if (data.profile.username === '') {
+    viewSwapper('edit-profile');
+  } else {
+    viewSwapper(data.view);
+  }
 }
 
 $avatarUrlInput.addEventListener('input', changePicture);
