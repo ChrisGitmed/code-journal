@@ -77,8 +77,11 @@ function viewSwapper(dataView) {
     $profileDiv.appendChild(getProfileDataInDOM(data));
   }
 }
-viewSwapper('profile');
+
+function checkLoaded(event) {
+}
 
 $avatarUrlInput.addEventListener('input', changePicture);
 $form.addEventListener('submit', submitValues);
 window.addEventListener('beforeunload', setItemsInStorage);
+document.addEventListener('DOMContentLoaded', checkLoaded);
