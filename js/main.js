@@ -47,15 +47,29 @@ function getProfileDataInDOM(data) {
   $newColumn.setAttribute('class', 'column-half flex-column');
   $newRow.appendChild($newColumn);
 
+  var $newUsernameSection = document.createElement('div');
+  $newUsernameSection.setAttribute('class', 'padding-bottom row align-center');
+  $newColumn.appendChild($newUsernameSection);
+
+  var $usernameIcon = document.createElement('i');
+  $usernameIcon.setAttribute('class', 'fas fa-user');
+  $newUsernameSection.appendChild($usernameIcon);
+
   var $usernameText = document.createElement('p');
-  $usernameText.setAttribute('class', 'padding-bottom');
   $usernameText.textContent = data.profile.username;
-  $newColumn.appendChild($usernameText);
+  $newUsernameSection.appendChild($usernameText);
+
+  var $newLocationSection = document.createElement('div');
+  $newLocationSection.setAttribute('class', 'padding-bottom row align-center');
+  $newColumn.appendChild($newLocationSection);
+
+  var $locationIcon = document.createElement('i');
+  $locationIcon.setAttribute('class', 'fas fa-map-marker-alt');
+  $newLocationSection.appendChild($locationIcon);
 
   var $locationText = document.createElement('p');
-  $locationText.setAttribute('class', 'padding-bottom');
   $locationText.textContent = data.profile.location;
-  $newColumn.appendChild($locationText);
+  $newLocationSection.appendChild($locationText);
 
   var $bioText = document.createElement('p');
   $bioText.textContent = data.profile.bio;
