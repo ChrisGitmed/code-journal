@@ -9,6 +9,11 @@ h1 {
   padding-right: 2rem;
 }
 
+h2,
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
 h4 {
   padding-right: 2rem;
 }
@@ -81,6 +86,10 @@ a:hover {
 
 .padding-bottom {
   padding-bottom: 0.75rem;
+}
+
+.extra-padding-bottom {
+  padding-bottom: 4rem;
 }
 
 .flex-end {
