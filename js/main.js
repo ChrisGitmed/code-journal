@@ -103,7 +103,11 @@ function viewSwapper(dataView) {
     $profileDiv.appendChild(getProfileDataInDOM(data));
   }
   if (data.view === 'edit-profile') {
-    $avatarImage.src = data.profile.avatarUrl;
+    if (data.profile.avatarUrl !== '') {
+      $avatarImage.src = data.profile.avatarUrl;
+    } else {
+      $avatarImage.src = 'images/placeholder-image-square.jpg';
+    }
     $form.elements.avatarUrl.value = data.profile.avatarUrl;
     $form.elements.username.value = data.profile.username;
     $form.elements.fullName.value = data.profile.fullName;
