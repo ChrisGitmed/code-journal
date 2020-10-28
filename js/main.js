@@ -1,10 +1,12 @@
 var $avatarUrlInput = document.querySelector('#avatar-URL');
-var $avatarImage = document.querySelector('img');
+var $avatarImage = document.querySelector('#avatar-image');
+var $photoUrlInput = document.querySelector('#image-URL');
+var $photo = document.querySelector('#photo');
 var $form = document.querySelector('form');
 var $viewList = document.querySelectorAll('main > div');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
 
-function changePicture(event) {
+function changeAvatarImage(event) {
   $avatarImage.src = event.target.value;
 }
 
@@ -137,8 +139,13 @@ function linkHandler(event) {
   }
 }
 
-$avatarUrlInput.addEventListener('input', changePicture);
+function changePhoto(event) {
+  $photo.src = event.target.value;
+}
+
+$avatarUrlInput.addEventListener('input', changeAvatarImage);
 $form.addEventListener('submit', submitValues);
 window.addEventListener('beforeunload', setItemsInStorage);
 document.addEventListener('DOMContentLoaded', checkLoaded);
 document.addEventListener('click', linkHandler);
+$photoUrlInput.addEventListener('input', changePhoto);
