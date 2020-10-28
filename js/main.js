@@ -1,14 +1,17 @@
 var $avatarUrlInput = document.querySelector('#avatar-URL');
-var $avatarImage = document.querySelector('img');
-var $form = document.querySelector('form');
+var $avatarImage = document.querySelector('#avatar-image');
+var $photoUrlInput = document.querySelector('#image-URL');
+var $photo = document.querySelector('#photo');
+var $form = document.querySelector('#profile-form');
+var $journalForm = document.querySelector('#journal-form');
 var $viewList = document.querySelectorAll('main > div');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
 
-function changePicture(event) {
+function changeAvatarImage(event) {
   $avatarImage.src = event.target.value;
 }
 
-function submitValues(event) {
+function submitProfileValues(event) {
   event.preventDefault();
   data.profile.avatarUrl = $form.elements.avatarUrl.value;
   data.profile.username = $form.elements.username.value;
@@ -83,7 +86,7 @@ function getProfileDataInDOM(data) {
   var $editButton = document.createElement('a');
   $editButton.setAttribute('href', '#');
   $editButton.setAttribute('data-view', 'edit-profile');
-  $editButton.setAttribute('class', 'edit-button');
+  $editButton.setAttribute('class', 'link-button');
   $editButton.textContent = 'EDIT';
   $editSection.appendChild($editButton);
   return $newProfile;
@@ -137,8 +140,27 @@ function linkHandler(event) {
   }
 }
 
-$avatarUrlInput.addEventListener('input', changePicture);
-$form.addEventListener('submit', submitValues);
+function changePhoto(event) {
+  $photo.src = event.target.value;
+}
+
+function submitJournalValues(event) {
+  event.preventDefault();
+  var newJournalEntry = {};
+
+  newJournalEntry.imageUrl = $journalForm.elements.imageUrl.value;
+  newJournalEntry.title = $journalForm.elements.title.value;
+  newJournalEntry.notes = $journalForm.elements.notes.value;
+  data.entries.push(newJournalEntry);
+  $photo.src = 'images/placeholder-image-square.jpg';
+  $journalForm.reset();
+  viewSwapper('entries');
+}
+
+$avatarUrlInput.addEventListener('input', changeAvatarImage);
+$form.addEventListener('submit', submitProfileValues);
 window.addEventListener('beforeunload', setItemsInStorage);
 document.addEventListener('DOMContentLoaded', checkLoaded);
 document.addEventListener('click', linkHandler);
+$photoUrlInput.addEventListener('input', changePhoto);
+$journalForm.addEventListener('submit', submitJournalValues);

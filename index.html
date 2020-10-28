@@ -19,14 +19,15 @@
   <header class="row justify-center align-center">
     <h1>Code Journal</h1>
     <h4><a href="#" data-view="profile">Profile</a></h4>
+    <h4><a href="#" data-view="entries">Entries</a></h4>
   </header>
 
   <main class="container">
     <div data-view="edit-profile" class="hidden">
-      <form>
+      <form id="profile-form">
         <h2 class="column-full">Edit Profile</h2>
         <div class="row">
-          <img class="column-half contain padding-bottom" src="images/placeholder-image-square.jpg" alt="Placeholder image">
+          <img id="avatar-image" class="column-half contain padding-bottom" src="images/placeholder-image-square.jpg" alt="Placeholder image">
           <div class="column-half flex-column space-between">
             <div class="padding-bottom">
               <label for="avatarUrl">Avatar URL</label>
@@ -58,7 +59,43 @@
       </form>
     </div>
 
-    <div data-view="profile" class="">
+    <div data-view="profile"></div>
+
+    <div data-view="entries">
+      <div class="row align-center space-between">
+        <h2>Entries</h2>
+        <a href="#" data-view="create-entry" class="link-button">New</a>
+      </div>
+    </div>
+
+    <div data-view="create-entry">
+      <form id="journal-form">
+        <h2 class="column-full">New Entry</h2>
+        <div class="row">
+          <img  id="photo" class="column-half contain padding-bottom" src="images/placeholder-image-square.jpg" alt="placeholder-image-square">
+          <div class="column-half flex-column">
+            <div class="padding-bottom">
+              <label for="imageUrl">Image URL</label>
+              <input id="image-URL" required type="text" name="imageUrl" class="input-box">
+            </div>
+            <div class="padding-bottom">
+              <label for="title">Title</label>
+              <input required type="text" name="title" class="input-box">
+            </div>
+          </div>
+        </div>
+
+        <div class="row column-full">
+          <label for="notes">Notes</label>
+          <textarea required name="notes" rows="10" class="input-box"></textarea>
+        </div>
+
+        <div class="row column-full flex-end">
+          <input type="submit" value="Save" class="save-button">
+        </div>
+
+
+      </form>
     </div>
 
   </main>
