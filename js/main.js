@@ -142,7 +142,6 @@ function viewSwapper(dataView) {
     $form.elements.location.value = data.profile.location;
     $form.elements.bio.value = data.profile.bio;
   }
-
 }
 
 function checkLoaded(event) {
@@ -182,6 +181,7 @@ function submitJournalValues(event) {
   newJournalEntry.title = $journalForm.elements.title.value;
   newJournalEntry.notes = $journalForm.elements.notes.value;
   data.entries.push(newJournalEntry);
+  $entryList.appendChild(getEntryInDOM(newJournalEntry));
   $photo.src = 'images/placeholder-image-square.jpg';
   $journalForm.reset();
   viewSwapper('entries');
