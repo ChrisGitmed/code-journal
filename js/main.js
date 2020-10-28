@@ -90,6 +90,14 @@ function viewSwapper(dataView) {
     $profileDiv.innerHTML = '';
     $profileDiv.appendChild(getProfileDataInDOM(data));
   }
+  if (data.view === 'edit-profile') {
+    $avatarImage.src = data.profile.avatarUrl;
+    $form.elements.avatarUrl.value = data.profile.avatarUrl;
+    $form.elements.username.value = data.profile.username;
+    $form.elements.fullName.value = data.profile.fullName;
+    $form.elements.bio.value = data.profile.bio;
+  }
+
 }
 
 function checkLoaded(event) {
