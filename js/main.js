@@ -147,10 +147,12 @@ function changePhoto(event) {
 function submitJournalValues(event) {
   event.preventDefault();
   var newJournalEntry = {};
+
   newJournalEntry.imageUrl = $journalForm.elements.imageUrl.value;
   newJournalEntry.title = $journalForm.elements.title.value;
   newJournalEntry.notes = $journalForm.elements.notes.value;
   data.entries.push(newJournalEntry);
+  $photo.src = 'images/placeholder-image-square.jpg';
 }
 
 $avatarUrlInput.addEventListener('input', changeAvatarImage);
