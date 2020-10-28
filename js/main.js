@@ -83,7 +83,7 @@ function getProfileDataInDOM(data) {
   var $editButton = document.createElement('a');
   $editButton.setAttribute('href', '#');
   $editButton.setAttribute('data-view', 'edit-profile');
-  $editButton.setAttribute('class', 'edit-button');
+  $editButton.setAttribute('class', 'link-button');
   $editButton.textContent = 'EDIT';
   $editSection.appendChild($editButton);
   return $newProfile;

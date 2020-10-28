@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: lightskyblue;
+  color: yellow;
 }
 
 .contain {
@@ -66,16 +66,16 @@ a:hover {
   margin-top: 1rem;
 }
 
-.edit-button {
+.link-button {
   width: 4rem;
   border: 2px solid black;
   border-radius: 3px;
   color: black;
   text-align: center;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
-.edit-button:hover {
+.link-button:hover {
   background-color: lightskyblue;
 }
 
