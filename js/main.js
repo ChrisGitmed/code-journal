@@ -154,6 +154,7 @@ function submitJournalValues(event) {
   data.entries.push(newJournalEntry);
   $photo.src = 'images/placeholder-image-square.jpg';
   $journalForm.reset();
+  viewSwapper('entries');
 }
 
 $avatarUrlInput.addEventListener('input', changeAvatarImage);
