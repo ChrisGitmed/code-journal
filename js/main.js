@@ -125,7 +125,14 @@ function checkLoaded(event) {
   }
 }
 
+function linkHandler(event) {
+  if (event.target.tagName === 'A') {
+    viewSwapper(event.target.getAttribute('data-view'));
+  }
+}
+
 $avatarUrlInput.addEventListener('input', changePicture);
 $form.addEventListener('submit', submitValues);
 window.addEventListener('beforeunload', setItemsInStorage);
 document.addEventListener('DOMContentLoaded', checkLoaded);
+document.addEventListener('click', linkHandler);
