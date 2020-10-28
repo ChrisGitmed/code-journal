@@ -72,8 +72,20 @@ function getProfileDataInDOM(data) {
   $newLocationSection.appendChild($locationText);
 
   var $bioText = document.createElement('p');
+  $bioText.setAttribute('class', 'padding-bottom');
   $bioText.textContent = data.profile.bio;
   $newColumn.appendChild($bioText);
+
+  var $editSection = document.createElement('div');
+  $editSection.setAttribute('class', 'row justify-center');
+  $newColumn.appendChild($editSection);
+
+  var $editButton = document.createElement('a');
+  $editButton.setAttribute('href', '#');
+  $editButton.setAttribute('data-view', 'edit-profile');
+  $editButton.setAttribute('class', 'edit-button');
+  $editButton.textContent = 'EDIT';
+  $editSection.appendChild($editButton);
   return $newProfile;
 }
 
@@ -90,6 +102,19 @@ function viewSwapper(dataView) {
     $profileDiv.innerHTML = '';
     $profileDiv.appendChild(getProfileDataInDOM(data));
   }
+  if (data.view === 'edit-profile') {
+    if (data.profile.avatarUrl !== '') {
+      $avatarImage.src = data.profile.avatarUrl;
+    } else {
+      $avatarImage.src = 'images/placeholder-image-square.jpg';
+    }
+    $form.elements.avatarUrl.value = data.profile.avatarUrl;
+    $form.elements.username.value = data.profile.username;
+    $form.elements.fullName.value = data.profile.fullName;
+    $form.elements.location.value = data.profile.location;
+    $form.elements.bio.value = data.profile.bio;
+  }
+
 }
 
 function checkLoaded(event) {
@@ -104,7 +129,16 @@ function checkLoaded(event) {
   }
 }
 
+function linkHandler(event) {
+  if (event.target.tagName === 'A') {
+    if (data.profile.username !== '') {
+      viewSwapper(event.target.getAttribute('data-view'));
+    }
+  }
+}
+
 $avatarUrlInput.addEventListener('input', changePicture);
 $form.addEventListener('submit', submitValues);
 window.addEventListener('beforeunload', setItemsInStorage);
 document.addEventListener('DOMContentLoaded', checkLoaded);
+document.addEventListener('click', linkHandler);
