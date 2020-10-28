@@ -92,6 +92,30 @@ function getProfileDataInDOM(data) {
   return $newProfile;
 }
 
+function getEntryInDOM(entry) {
+  var $newEntryRow = document.createElement('div');
+  $newEntryRow.setAttribute('class', 'row');
+
+  var $newEntryImage = document.createElement('img');
+  $newEntryImage.setAttribute('class', 'column-half contain padding-bottom');
+  $newEntryImage.setAttribute('src', entry.imageUrl);
+  $newEntryImage.setAttribute('alt', 'Entry image');
+  $newEntryRow.appendChild($newEntryImage);
+
+  var $newEntryColumn = document.createElement('div');
+  $newEntryColumn.setAttribute('class', 'column-half flex-column extra-padding-bottom');
+  $newEntryRow.appendChild($newEntryColumn);
+
+  var $newEntryTitle = document.createElement('h3');
+  $newEntryTitle.textContent = entry.title;
+  $newEntryColumn.appendChild($newEntryTitle);
+
+  var $newEntryNotes = document.createElement('p');
+  $newEntryNotes.textContent = entry.notes;
+  $newEntryColumn.appendChild($newEntryNotes);
+  return $newEntryRow;
+}
+
 function viewSwapper(dataView) {
   for (var i = 0; i < $viewList.length; i++) {
     if ($viewList[i].getAttribute('data-view') !== dataView) {
@@ -164,3 +188,6 @@ document.addEventListener('DOMContentLoaded', checkLoaded);
 document.addEventListener('click', linkHandler);
 $photoUrlInput.addEventListener('input', changePhoto);
 $journalForm.addEventListener('submit', submitJournalValues);
+
+// Avoiding eslint
+getEntryInDOM(data.entries[0]);
