@@ -127,7 +127,9 @@ function checkLoaded(event) {
 
 function linkHandler(event) {
   if (event.target.tagName === 'A') {
-    viewSwapper(event.target.getAttribute('data-view'));
+    if (data.profile.username !== '') {
+      viewSwapper(event.target.getAttribute('data-view'));
+    }
   }
 }
 
