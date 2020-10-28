@@ -146,10 +146,11 @@ function changePhoto(event) {
 
 function submitJournalValues(event) {
   event.preventDefault();
-  var newObject = {};
-  newObject.imageUrl = $journalForm.elements.imageUrl.value;
-  newObject.title = $journalForm.elements.title.value;
-  newObject.notes = $journalForm.elements.notes.value;
+  var newJournalEntry = {};
+  newJournalEntry.imageUrl = $journalForm.elements.imageUrl.value;
+  newJournalEntry.title = $journalForm.elements.title.value;
+  newJournalEntry.notes = $journalForm.elements.notes.value;
+  data.entries.push(newJournalEntry);
 }
 
 $avatarUrlInput.addEventListener('input', changeAvatarImage);
