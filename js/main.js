@@ -153,6 +153,7 @@ function submitJournalValues(event) {
   newJournalEntry.notes = $journalForm.elements.notes.value;
   data.entries.push(newJournalEntry);
   $photo.src = 'images/placeholder-image-square.jpg';
+  $journalForm.reset();
 }
 
 $avatarUrlInput.addEventListener('input', changeAvatarImage);
