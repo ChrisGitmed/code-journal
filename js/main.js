@@ -6,6 +6,7 @@ var $form = document.querySelector('#profile-form');
 var $journalForm = document.querySelector('#journal-form');
 var $viewList = document.querySelectorAll('main > div');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
+var $entryList = document.querySelector('ol');
 
 function changeAvatarImage(event) {
   $avatarImage.src = event.target.value;
@@ -92,6 +93,30 @@ function getProfileDataInDOM(data) {
   return $newProfile;
 }
 
+function getEntryInDOM(entry) {
+  var $newEntryRow = document.createElement('div');
+  $newEntryRow.setAttribute('class', 'row');
+
+  var $newEntryImage = document.createElement('img');
+  $newEntryImage.setAttribute('class', 'column-half contain padding-bottom');
+  $newEntryImage.setAttribute('src', entry.imageUrl);
+  $newEntryImage.setAttribute('alt', 'Entry image');
+  $newEntryRow.appendChild($newEntryImage);
+
+  var $newEntryColumn = document.createElement('div');
+  $newEntryColumn.setAttribute('class', 'column-half flex-column extra-padding-bottom');
+  $newEntryRow.appendChild($newEntryColumn);
+
+  var $newEntryTitle = document.createElement('h3');
+  $newEntryTitle.textContent = entry.title;
+  $newEntryColumn.appendChild($newEntryTitle);
+
+  var $newEntryNotes = document.createElement('p');
+  $newEntryNotes.textContent = entry.notes;
+  $newEntryColumn.appendChild($newEntryNotes);
+  return $newEntryRow;
+}
+
 function viewSwapper(dataView) {
   for (var i = 0; i < $viewList.length; i++) {
     if ($viewList[i].getAttribute('data-view') !== dataView) {
@@ -117,7 +142,6 @@ function viewSwapper(dataView) {
     $form.elements.location.value = data.profile.location;
     $form.elements.bio.value = data.profile.bio;
   }
-
 }
 
 function checkLoaded(event) {
@@ -129,6 +153,11 @@ function checkLoaded(event) {
     viewSwapper('edit-profile');
   } else {
     viewSwapper(data.view);
+  }
+  if (data.view === 'entries') {
+    for (var i = 0; i < data.entries.length; i++) {
+      $entryList.appendChild(getEntryInDOM(data.entries[i]));
+    }
   }
 }
 
@@ -152,6 +181,7 @@ function submitJournalValues(event) {
   newJournalEntry.title = $journalForm.elements.title.value;
   newJournalEntry.notes = $journalForm.elements.notes.value;
   data.entries.push(newJournalEntry);
+  $entryList.appendChild(getEntryInDOM(newJournalEntry));
   $photo.src = 'images/placeholder-image-square.jpg';
   $journalForm.reset();
   viewSwapper('entries');
