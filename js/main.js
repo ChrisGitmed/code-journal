@@ -6,6 +6,7 @@ var $form = document.querySelector('#profile-form');
 var $journalForm = document.querySelector('#journal-form');
 var $viewList = document.querySelectorAll('main > div');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
+var $entryList = document.querySelector('ol');
 
 function changeAvatarImage(event) {
   $avatarImage.src = event.target.value;
@@ -154,6 +155,11 @@ function checkLoaded(event) {
   } else {
     viewSwapper(data.view);
   }
+  if (data.view === 'entries') {
+    for (var i = 0; i < data.entries.length; i++) {
+      $entryList.appendChild(getEntryInDOM(data.entries[i]));
+    }
+  }
 }
 
 function linkHandler(event) {
@@ -188,6 +194,3 @@ document.addEventListener('DOMContentLoaded', checkLoaded);
 document.addEventListener('click', linkHandler);
 $photoUrlInput.addEventListener('input', changePhoto);
 $journalForm.addEventListener('submit', submitJournalValues);
-
-// Avoiding eslint
-getEntryInDOM(data.entries[0]);
