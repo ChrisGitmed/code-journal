@@ -63,7 +63,35 @@
 
     <div data-view="entries"></div>
 
-    <div data-view="create-entry"></div>
+    <div data-view="create-entry">
+      <form>
+        <h2 class="column-full">New Entry</h2>
+        <div class="row">
+          <img  class="column-half contain padding-bottom" src="images/placeholder-image-square.jpg" alt="placeholder-image-square">
+          <div class="column-half flex-column">
+            <div class="padding-bottom">
+              <label for="imageUrl">Image URL</label>
+              <input id="image-URL" required type="text" name="imageUrl" class="input-box">
+            </div>
+            <div class="padding-bottom">
+              <label for="title">Title</label>
+              <input required type="text" name="title" class="input-box">
+            </div>
+          </div>
+        </div>
+
+        <div class="row column-full">
+          <label for="notes">Notes</label>
+          <textarea required name="notes" rows="10" class="input-box"></textarea>
+        </div>
+
+        <div class="row column-full flex-end">
+          <input type="submit" value="Save" class="save-button">
+        </div>
+
+
+      </form>
+    </div>
 
   </main>
   <script src="js/data.js"></script>
