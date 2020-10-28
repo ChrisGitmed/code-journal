@@ -72,8 +72,20 @@ function getProfileDataInDOM(data) {
   $newLocationSection.appendChild($locationText);
 
   var $bioText = document.createElement('p');
+  $bioText.setAttribute('class', 'padding-bottom');
   $bioText.textContent = data.profile.bio;
   $newColumn.appendChild($bioText);
+
+  var $editSection = document.createElement('div');
+  $editSection.setAttribute('class', 'row justify-center');
+  $newColumn.appendChild($editSection);
+
+  var $editButton = document.createElement('a');
+  $editButton.setAttribute('href', '#');
+  $editButton.setAttribute('data-view', 'edit-profile');
+  $editButton.setAttribute('class', 'edit-button');
+  $editButton.textContent = 'EDIT';
+  $editSection.appendChild($editButton);
   return $newProfile;
 }
 
