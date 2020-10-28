@@ -146,7 +146,12 @@ function changePhoto(event) {
 
 function submitJournalValues(event) {
   event.preventDefault();
+  var newObject = {};
+  newObject.imageUrl = $journalForm.elements.imageUrl.value;
+  newObject.title = $journalForm.elements.title.value;
+  newObject.notes = $journalForm.elements.notes.value;
 }
+
 $avatarUrlInput.addEventListener('input', changeAvatarImage);
 $form.addEventListener('submit', submitProfileValues);
 window.addEventListener('beforeunload', setItemsInStorage);
