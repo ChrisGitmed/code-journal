@@ -6,6 +6,7 @@ html {
 h1 {
   font-family: 'Ubuntu', sans-serif;
   font-size: 2rem;
+  padding-right: 2rem;
 }
 
 header {
@@ -30,6 +31,11 @@ i {
   padding-right: 0.5rem;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .contain {
   object-fit: contain;
 }
@@ -37,10 +43,6 @@ i {
 .flex-column {
   display: flex;
   flex-direction: column;
-}
-
-.padding-bottom {
-  padding-bottom: 0.75rem;
 }
 
 .input-box {
@@ -61,12 +63,15 @@ i {
   border-radius: 3px;
   color: black;
   text-align: center;
-  text-decoration: none;
   transition: 0.5s;
 }
 
 .edit-button:hover {
   background-color: lightskyblue;
+}
+
+.padding-bottom {
+  padding-bottom: 0.75rem;
 }
 
 .flex-end {
