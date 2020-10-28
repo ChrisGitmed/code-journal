@@ -21,12 +21,12 @@
   </header>
 
   <main class="container">
-    <div data-view="edit-profile">
+    <div data-view="edit-profile" class="hidden">
       <form>
         <h2 class="column-full">Edit Profile</h2>
         <div class="row">
           <img class="column-half contain padding-bottom" src="images/placeholder-image-square.jpg" alt="Placeholder image">
-          <div class="column-half flex-column">
+          <div class="column-half flex-column space-between">
             <div class="padding-bottom">
               <label for="avatarUrl">Avatar URL</label>
               <input id= "avatar-URL" required type="text" name="avatarUrl" class="input-box">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="row column-full">
-          <label for="bio">Bio:</label>
+          <label for="bio">Bio</label>
           <textarea required name="bio" rows="10" class="input-box"></textarea>
         </div>
 
@@ -55,10 +55,12 @@
           <input id="submit" type="submit" value="Save" class="save-button">
         </div>
       </form>
-
     </div>
-  </main>
 
+    <div data-view="profile" class="">
+    </div>
+
+  </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>

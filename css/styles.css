@@ -26,6 +26,10 @@ input {
   font-size: 1rem;
 }
 
+i {
+  padding-right: 0.5rem;
+}
+
 .contain {
   object-fit: contain;
 }
@@ -33,7 +37,6 @@ input {
 .flex-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .padding-bottom {
@@ -54,4 +57,12 @@ input {
 
 .flex-end {
   justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
 }
