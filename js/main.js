@@ -107,9 +107,19 @@ function getEntryInDOM(entry) {
   $newEntryColumn.setAttribute('class', 'column-half flex-column extra-padding-bottom');
   $newEntryRow.appendChild($newEntryColumn);
 
+  var $newTitleRow = document.createElement('div');
+  $newTitleRow.setAttribute('class', 'row align-center space-between');
+  $newEntryColumn.appendChild($newTitleRow);
+
   var $newEntryTitle = document.createElement('h3');
   $newEntryTitle.textContent = entry.title;
-  $newEntryColumn.appendChild($newEntryTitle);
+  $newTitleRow.appendChild($newEntryTitle);
+
+  var $newEntryDeleteButton = document.createElement('button');
+  $newEntryDeleteButton.textContent = 'Delete';
+  $newEntryDeleteButton.setAttribute('class', 'delete-button');
+
+  $newTitleRow.appendChild($newEntryDeleteButton);
 
   var $newEntryNotes = document.createElement('p');
   $newEntryNotes.textContent = entry.notes;

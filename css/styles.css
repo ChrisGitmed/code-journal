@@ -84,6 +84,19 @@ a:hover {
   background-color: lightskyblue;
 }
 
+.delete-button {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+  height: 1.5rem;
+  transition: 0.25s;
+}
+
+.delete-button:hover {
+  color: white;
+  background-color: red;
+}
+
 .padding-bottom {
   padding-bottom: 0.75rem;
 }
