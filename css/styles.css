@@ -54,6 +54,24 @@ a:hover {
   object-fit: contain;
 }
 
+.hidden-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  background-color: rgba(50, 50, 50, 0.75);
+}
+
+.modal {
+  width: 420px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -71,28 +89,31 @@ a:hover {
   margin-top: 1rem;
 }
 
-.link-button {
-  width: 4rem;
+.blue-button {
+  width: 3rem;
   border: 2px solid black;
   border-radius: 3px;
   color: black;
   text-align: center;
-  transition: 0.25s;
-}
-
-.link-button:hover {
-  background-color: lightskyblue;
-}
-
-.delete-button {
-  color: red;
-  background-color: white;
-  border: 1px solid red;
   height: 1.5rem;
   transition: 0.25s;
 }
 
-.delete-button:hover {
+.blue-button:hover {
+  background-color: lightskyblue;
+}
+
+.red-button {
+  width: 3rem;
+  border: 2px solid red;
+  border-radius: 3px;
+  color: red;
+  background-color: white;
+  height: 1.5rem;
+  transition: 0.25s;
+}
+
+.red-button:hover {
   color: white;
   background-color: red;
 }
@@ -111,6 +132,10 @@ a:hover {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-space-around {
+  justify-content: space-around;
 }
 
 .space-between {

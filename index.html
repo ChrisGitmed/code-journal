@@ -62,9 +62,21 @@
     <div data-view="profile"></div>
 
     <div data-view="entries">
+
+      <div class="hidden-container hidden">
+        <div class="modal">
+          <h3>Delete entry?</h3>
+          <div class="row justify-space-around padding-bottom">
+            <button class="red-button">YES</button>
+            <button class="blue-button">NO</button>
+          </div>
+        </div>
+      </div>
+
+
       <div class="row align-center space-between">
         <h2>Entries</h2>
-        <a href="#" data-view="create-entry" class="link-button">New</a>
+        <a href="#" data-view="create-entry" class="blue-button">New</a>
       </div>
 
       <ol></ol>

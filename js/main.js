@@ -117,7 +117,7 @@ function getEntryInDOM(entry) {
 
   var $newEntryDeleteButton = document.createElement('button');
   $newEntryDeleteButton.textContent = 'Delete';
-  $newEntryDeleteButton.setAttribute('class', 'delete-button');
+  $newEntryDeleteButton.setAttribute('class', 'red-button');
   $newEntryDeleteButton.addEventListener('click', openConfirmationModal);
   $newTitleRow.appendChild($newEntryDeleteButton);
 
