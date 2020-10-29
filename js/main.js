@@ -118,7 +118,7 @@ function getEntryInDOM(entry) {
   var $newEntryDeleteButton = document.createElement('button');
   $newEntryDeleteButton.textContent = 'Delete';
   $newEntryDeleteButton.setAttribute('class', 'delete-button');
-
+  $newEntryDeleteButton.addEventListener('click', openConfirmationModal);
   $newTitleRow.appendChild($newEntryDeleteButton);
 
   var $newEntryNotes = document.createElement('p');
@@ -195,6 +195,10 @@ function submitJournalValues(event) {
   $photo.src = 'images/placeholder-image-square.jpg';
   $journalForm.reset();
   viewSwapper('entries');
+}
+
+function openConfirmationModal(event) {
+
 }
 
 $avatarUrlInput.addEventListener('input', changeAvatarImage);
